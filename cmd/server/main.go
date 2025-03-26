@@ -33,6 +33,7 @@ func main() {
 	config := config.InitConfig()
 	mongoConn := mongodb.ConnectToMongoDB(config.MongodbURI)
 	mongoConn.Checkconnection()
+	defer mongoConn.CloseConnetion()
 
 	e := echo.New()
 	messageService := app.NewMessageService(mongoConn.Client)

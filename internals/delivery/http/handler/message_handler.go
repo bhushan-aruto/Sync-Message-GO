@@ -17,7 +17,7 @@ func NewMessageHandler(service *app.MessageService) *messageHandler {
 	}
 }
 
-func (h *messageHandler) FetchMessages(c echo.Context) error {
+func (h *messageHandler) GetOrderedMessagesHandler(c echo.Context) error {
 
 	userId := c.Param("user_id")
 	// currentMessageId := c.QueryParam("current_message_id")

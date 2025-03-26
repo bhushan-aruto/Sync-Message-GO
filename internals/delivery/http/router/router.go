@@ -32,6 +32,6 @@ func InitRoutes(e *echo.Echo, messageService *app.MessageService) {
 
 	messageOrderHandler := handler.NewMessageHandler(messageService)
 
-	e.GET("/messages/:user_id", messageOrderHandler.FetchMessages)
+	e.GET("/messages/:user_id", messageOrderHandler.GetOrderedMessagesHandler)
 
 }
